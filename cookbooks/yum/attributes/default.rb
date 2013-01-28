@@ -1,0 +1,8 @@
+default['yum']['exclude'] = ''
+default['yum']['installonlypkgs'] = ''
+default['yum']['ius_release'] = '1.0-10'
+default['yum']['repoforge_release'] = '0.5.2-2'
+default['yum']['proxy'] = ''
+default['yum']['proxy_username'] = ''
+default['yum']['proxy_password'] = ''
+default['yum']['arch'] = 'x86_64'
