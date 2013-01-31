@@ -1,0 +1,33 @@
+[Role]
+1. create
+
+name 'rails_app'
+description 'The base role for systems that run Rails applications'
+run_list "recipe[passenger_enterprise::apache2]", "recipe[rails_enterprise]"
+
+2. show 
+knife role show rails_app
+
+3. add a node( app.example.com)
+knife node run_list add app.example.com "role[rails_app]"
+
+[Launch Instance]
+1. launch a new m1.small instance based on ami-399ca94d in eu-west-1a zone, eu-west-1 region, and login by ubuntu name and public key knife.pem, which name is knife.
+knife ec2 server create -r "role[ubuntu]" -I ami-399ca94d -f m1.small -S knife -i ~/.ssh/knife.pem --ssh-user ubuntu --region eu-west-1 -Z eu-west-1a
+
+2. show ec2 instance
+knife ec2 server list --region eu-west-1
+
+3. delete instance i-xxxxxx
+knife ec2 server delete i-xxxxxx --region eu-west-1
+knife node delete i-xxxxxx
+
+4.
+
+
+[URLs]
+1.http://www.agileweboperations.com/automated-configuration-management-with-opscode-chef-the-basic-moving-parts
+2.http://www.agileweboperations.com/amazon-ec2-instances-with-opscode-chef-using-knife
+3.http://allanfeid.com/content/cooking-chef
+4.http://www.opinionatedprogrammer.com/2011/06/chef-solo-tutorial-managing-a-single-server-with-chef/
+5.
