@@ -1,0 +1,3 @@
+cookbook "logwatch" do
+  configuration "default"
+end
